@@ -9,5 +9,10 @@ namespace ConsoleAdventure.Project.Models
         public string Description { get; set; }
         public List<Item> Items { get; set; }
         public Dictionary<string, IRoom> Exits { get; set; }
+
+    // public void Add.Connection(IRoom, Room); 
+    //     {
+    //         Connections.Add(Room.Name, Room); 
+    //     }
     }
 }

@@ -7,7 +7,7 @@ namespace ConsoleAdventure
   {
     public static void Main(string[] args)
     {
-      System.Console.WriteLine("hello world");
+      new GameController().run(); 
     }
   }
 }
