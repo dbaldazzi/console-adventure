@@ -41,7 +41,7 @@ namespace ConsoleAdventure.Project.Controllers
       switch (input)
       {
         case "quit":
-          _gameService.Quit();
+          Environment.Exit(1);
           break;
         case "look":
           _gameService.Look();
@@ -60,5 +60,6 @@ namespace ConsoleAdventure.Project.Controllers
           break;
       }
     }
+
   }
 }

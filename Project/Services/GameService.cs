@@ -44,14 +44,15 @@ namespace ConsoleAdventure.Project
 
         public void Look()
         {
-
+          Messages.Add($"Looking around {_game.CurrentRoom.Description}");
             throw new System.NotImplementedException();
         }
 
     public void Quit()
     {
-      Environment.Exit(0); 
-    
+      { 
+      Environment.Exit(0);
+    }
       throw new System.NotImplementedException();
         }
         ///<summary>
