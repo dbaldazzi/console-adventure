@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ConsoleAdventure.Project.Interfaces;
 using ConsoleAdventure.Project.Models;
@@ -47,9 +48,10 @@ namespace ConsoleAdventure.Project
             throw new System.NotImplementedException();
         }
 
-        public void Quit()
-        {
-      System.Environment.Exit(0); 
+    public void Quit()
+    {
+      Environment.Exit(0); 
+    
       throw new System.NotImplementedException();
         }
         ///<summary>
