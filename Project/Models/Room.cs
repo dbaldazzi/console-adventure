@@ -10,6 +10,7 @@ namespace ConsoleAdventure.Project.Models
     public List<Item> Items { get; set; }
     public Dictionary<string, IRoom> Exits { get; set; }
     public string Help { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    List<IItem> IRoom.Items { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     public void AddConnection(IRoom Room)
     {
