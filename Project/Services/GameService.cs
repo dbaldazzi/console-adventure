@@ -30,7 +30,9 @@ namespace ConsoleAdventure.Project
         }
         public void Help()
         {
-            throw new System.NotImplementedException();
+      string Help = _game.CurrentRoom.Help;
+      Messages.Add($"{Help}");
+      throw new System.NotImplementedException();
         }
 
         public void Inventory()
@@ -45,6 +47,7 @@ namespace ConsoleAdventure.Project
 
         public void Quit()
         {
+            
             throw new System.NotImplementedException();
         }
         ///<summary>

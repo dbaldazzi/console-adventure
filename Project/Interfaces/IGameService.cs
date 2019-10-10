@@ -14,9 +14,12 @@ namespace ConsoleAdventure.Project.Interfaces
 
         //Stops the application
         void Quit();
+     
 
-        //Should display a list of commands to the console
-        void Help();
+
+    //Should display a list of commands to the console
+    void Help();
+
 
         //Validate CurrentRoom.Exits contains the desired direction
         //if it does change the CurrentRoom
