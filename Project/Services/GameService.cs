@@ -6,7 +6,12 @@ namespace ConsoleAdventure.Project
 {
     public class GameService : IGameService
     {
-        private IGame _game { get; set; }
+    public GameService(IGame _game) 
+        {
+          this._game = _game;
+               
+        }
+                private IGame _game { get; set; }
 
         public List<string> Messages { get; set; }
         public GameService()
@@ -16,7 +21,12 @@ namespace ConsoleAdventure.Project
         }
         public void Go(string direction)
         {
-            throw new System.NotImplementedException();
+      string from = _game.CurrentRoom.Name;
+      _game.CurrentRoom = _game.CurrentRoom.Move(direction);
+      string to = _game.CurrentRoom.Name;
+
+      Messages.Add($"Moved {from} to {to}");
+      throw new System.NotImplementedException();
         }
         public void Help()
         {
