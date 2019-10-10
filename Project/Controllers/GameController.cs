@@ -15,7 +15,7 @@ namespace ConsoleAdventure.Project.Controllers
     {
       while (true)
       {
-        Run();
+        // Run();
         GetUserInput();
       }
     }
@@ -24,6 +24,7 @@ namespace ConsoleAdventure.Project.Controllers
     public void GetUserInput()
     {
       Console.WriteLine("What would you like to do?");
+      System.Console.WriteLine("0 for help, 1 to quit");
       string input = Console.ReadLine().ToLower() + " ";
       string command = input.Substring(0, input.IndexOf(" "));
       string option = input.Substring(input.IndexOf(" ") + 1).Trim();
@@ -39,7 +40,7 @@ namespace ConsoleAdventure.Project.Controllers
       string input = Console.ReadLine().ToLower();
       switch (input)
       {
-        case "quite":
+        case "quit":
           _gameService.Quit();
           break;
         case "look":

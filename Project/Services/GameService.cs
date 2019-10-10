@@ -30,6 +30,7 @@ namespace ConsoleAdventure.Project
         }
         public void Help()
         {
+      Messages.Add("Look"); 
       string Help = _game.CurrentRoom.Help;
       Messages.Add($"{Help}");
       throw new System.NotImplementedException();
@@ -42,24 +43,26 @@ namespace ConsoleAdventure.Project
 
         public void Look()
         {
+
             throw new System.NotImplementedException();
         }
 
         public void Quit()
         {
-            
-            throw new System.NotImplementedException();
+      System.Environment.Exit(0); 
+      throw new System.NotImplementedException();
         }
         ///<summary>
         ///Restarts the game 
         ///</summary>
         public void Reset()
-        {
-            throw new System.NotImplementedException();
+        { 
+      throw new System.NotImplementedException();
         }
 
         public void Setup(string playerName)
         {
+
             throw new System.NotImplementedException();
         }
         ///<summary>When taking an item be sure the item is in the current room before adding it to the player inventory, Also don't forget to remove the item from the room it was picked up in</summary>
@@ -74,7 +77,8 @@ namespace ConsoleAdventure.Project
         ///</summary>
         public void UseItem(string itemName)
         {
-            throw new System.NotImplementedException();
+      Messages.Add("The room lights up and you can now see");
+      throw new System.NotImplementedException();
         }
     }
 }
