@@ -4,7 +4,17 @@ namespace ConsoleAdventure.Project.Models
 {
     public class Game : IGame
     {
-        public IRoom CurrentRoom { get; set; }
+    public Game()
+    {
+    }
+
+    public Game(IRoom currentRoom, IPlayer currentPlayer) 
+        {
+          this.CurrentRoom = currentRoom;
+              this.CurrentPlayer = currentPlayer;
+               
+        }
+                public IRoom CurrentRoom { get; set; }
         public IPlayer CurrentPlayer { get; set; }
 
         //NOTE Make yo rooms here...
@@ -25,7 +35,13 @@ namespace ConsoleAdventure.Project.Models
       mh.AddConnection(wr);
       wr.AddConnection(str);
 
-//starting room 
+      //creating items
+      Item torch = new Item("lights the room"); 
+
+      // Items in rooms
+      ew.Items.Add(torch); 
+
+      //starting room 
       CurrentRoom = ew; 
 
 
@@ -33,5 +49,10 @@ namespace ConsoleAdventure.Project.Models
 
       throw new System.NotImplementedException();
         }
+    //     public Game()
+    //     {
+    //   Room = new Room();
+    //   Setup(); 
     }
-}
+    }
+    

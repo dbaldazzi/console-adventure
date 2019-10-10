@@ -30,7 +30,7 @@ namespace ConsoleAdventure.Project
         }
         public void Help()
         {
-      Messages.Add("Look"); 
+      Messages.Add("help"); 
       string Help = _game.CurrentRoom.Help;
       Messages.Add($"{Help}");
       throw new System.NotImplementedException();
