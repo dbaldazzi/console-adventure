@@ -45,7 +45,7 @@ namespace ConsoleAdventure.Project
 
         public void Inventory()
         {
-      Messages.Add("There is a torch.  Do you want to get it?");
+      Messages.Add("There is a torch. Do you want to get it?");
       string Choice = Console.ReadLine().ToLower(); 
       if (Choice == "yes")
       

@@ -21,13 +21,13 @@ namespace ConsoleAdventure.Project.Models
     //NOTE Make yo rooms here...
     public void Setup()
     { //rooms 
-      Room ew = new Room("ew", "entry way");
-      Room mh = new Room("mh", "main halll");
-      Room twr = new Room("twr", "tower");
-      Room vw = new Room("vw", "Room with a view");
-      Room str = new Room("str", "Stair way");
-      Room wr = new Room("wr", "Weapons Room");
-      Room br = new Room("br", "Bell Room"); 
+      Room ew = new Room("ew", "entry way", "there is a torch do you wish to take it?", "long wide halway with torches lining the walls", "north");
+      Room mh = new Room("mh", "main hall", "", "you are now in a vast room that is dimly lit but you can make out a enormous table in the middle of the room", "north, east, west");
+      Room twr = new Room("twr", "tower", "", "you are in a tower with large windows high above your city you are now the leader of this great city and you have won this adventure", "south");
+      Room vw = new Room("vw", "Room with a view", "", "you are in a sparce room with a large window on the far side which might help you get your barrings", "west");
+      Room str = new Room("str", "Stair way", "", "you are now in a very dark room, doesn't feel very big, but you can't see your hand infront of your face", "north, south");
+      Room wr = new Room("wr", "Weapons Room", "", "you are in a small room filled with weapons and armor all locked away", "west");
+      Room br = new Room("br", "Bell Room", "", "you have entered a room with a large bell", "north, south"); 
 
       Dictionary<string, string> Exits = new Dictionary<string, string>();
       ew.Exits.Add("north", mh);
@@ -45,13 +45,13 @@ namespace ConsoleAdventure.Project.Models
 
 
 
-    //   //room connections 
-    //   ew.AddConnection(mh);
-    //   mh.AddConnection(str);
-    //   str.AddConnection(twr);
-    //   twr.AddConnection(vw);
-    //   mh.AddConnection(wr);
-    //   wr.AddConnection(str);
+      //room connections 
+      ew.AddConnection(mh);
+      mh.AddConnection(str);
+      str.AddConnection(twr);
+      twr.AddConnection(vw);
+      mh.AddConnection(wr);
+      wr.AddConnection(str);
 
       //creating items
       Item torch = new Item("lights the room");

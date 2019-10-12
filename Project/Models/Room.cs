@@ -3,8 +3,14 @@ using ConsoleAdventure.Project.Interfaces;
 
 namespace ConsoleAdventure.Project.Models
 {
-  public class Room: IRoom
+  public class Room : IRoom
   {
+    public Room(string name, string description)
+    {
+      this.Name = name;
+      this.Description = description;
+
+    }
     public string Name { get; set; }
     public string Description { get; set; }
     public List<Item> Items { get; set; }
@@ -34,11 +40,15 @@ namespace ConsoleAdventure.Project.Models
       }
       return template;
     }
-    public Room(string code, string name)
+    public Room(string code, string name, string item, string description, string exits)
     {
-    
+
       Name = name;
-      Items = Items; 
+      Items = Items;
+      Description = description;
+      // Exits = exits; 
+
+
       Exits = new Dictionary<string, IRoom>();
     }
   }
