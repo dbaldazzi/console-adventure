@@ -12,7 +12,7 @@ namespace ConsoleAdventure.Project
           this._game = _game;
                
         }
-                private IGame _game { get; set; }
+                        private IGame _game { get; set; }
 
         public List<string> Messages { get; set; }
         public GameService()
@@ -26,10 +26,16 @@ namespace ConsoleAdventure.Project
       _game.CurrentRoom = _game.CurrentRoom.Move(direction);
       string to = _game.CurrentRoom.Name;
 
+      if(from == to) 
+      {
+        Messages.Add("Invalid Move");
+        return;
+      }
       Messages.Add($"Moved {from} to {to}");
+      Messages.Add($"Room Description {_game.CurrentRoom.Description}");
       throw new System.NotImplementedException();
         }
-        public void Help()
+        public void Help(string input)
         {
       Messages.Add("help"); 
       string Help = _game.CurrentRoom.Help;
@@ -39,10 +45,18 @@ namespace ConsoleAdventure.Project
 
         public void Inventory()
         {
-            throw new System.NotImplementedException();
+      Messages.Add("There is a torch.  Do you want to get it?");
+      string Choice = Console.ReadLine().ToLower(); 
+      if (Choice == "yes")
+      
+
+
+
+
+      throw new System.NotImplementedException();
         }
 
-        public void Look()
+        public void Look(string input)
         {
           Messages.Add($"Looking around {_game.CurrentRoom.Description}");
             throw new System.NotImplementedException();
@@ -65,12 +79,14 @@ namespace ConsoleAdventure.Project
 
         public void Setup(string playerName)
         {
-
-            throw new System.NotImplementedException();
+      Messages.Add("Chose a name");
+      Console.ReadLine(); 
+      throw new System.NotImplementedException();
         }
         ///<summary>When taking an item be sure the item is in the current room before adding it to the player inventory, Also don't forget to remove the item from the room it was picked up in</summary>
         public void TakeItem(string itemName)
         {
+
             throw new System.NotImplementedException();
         }
         ///<summary>
@@ -81,7 +97,21 @@ namespace ConsoleAdventure.Project
         public void UseItem(string itemName)
         {
       Messages.Add("The room lights up and you can now see");
+      Console.ReadLine(); 
+
       throw new System.NotImplementedException();
         }
+
+    public void Help()
+    {
+      Messages.Add("To move enter: north, south east or west" + "To look around room enter: look" + "To get an item enter: getitem" + "To use an item enter: useitem");
+      throw new NotImplementedException();
     }
+
+    public void Look()
+    {
+      Messages.Add(_game.CurrentRoom.Description); 
+      throw new NotImplementedException();
+    }
+  }
 }

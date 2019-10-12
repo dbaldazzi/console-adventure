@@ -23,28 +23,23 @@ namespace ConsoleAdventure.Project.Controllers
     //NOTE Gets the user input, calls the appropriate command, and passes on the option if needed.
     public void GetUserInput()
     {
+      Console.WriteLine("your in the {_game.CurrentRoom}");
       Console.WriteLine("What would you like to do?");
-      System.Console.WriteLine("0 for help, 1 to quit");
+      // System.Console.WriteLine("0 for help, 1 to quit");
       string input = Console.ReadLine().ToLower() + " ";
       string command = input.Substring(0, input.IndexOf(" "));
       string option = input.Substring(input.IndexOf(" ") + 1).Trim();
       //NOTE this will take the user input and parse it into a command and option.
       //IE: take silver key => command = "take" option = "silver key"
+      //NOTE this should print your messages for the game.
 
-    }
-
-    //NOTE this should print your messages for the game.
-    private void Print()
-    {
-      System.Console.WriteLine("What would you like to do");
-      string input = Console.ReadLine().ToLower();
       switch (input)
       {
         case "quit":
-          Environment.Exit(1);
+          Environment.Exit(0);
           break;
         case "look":
-          _gameService.Look();
+          _gameService.Look(input);
           break;
         case "get item":
           _gameService.TakeItem(input);
@@ -53,13 +48,22 @@ namespace ConsoleAdventure.Project.Controllers
           _gameService.UseItem(input);
           break;
         case "move":
-          _gameService.Go(input);
+          _gameService.Go(input);   // like fly from fedup 
           break;
         case "help":
-          _gameService.Help();
+          _gameService.Help(input);
           break;
       }
-    }
+      // private void Print()
+      {
 
+
+      }
+
+    }
   }
 }
+
+
+
+
