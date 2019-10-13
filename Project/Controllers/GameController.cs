@@ -23,11 +23,10 @@ namespace ConsoleAdventure.Project.Controllers
     //NOTE Gets the user input, calls the appropriate command, and passes on the option if needed.
     public void GetUserInput()
     {
-      Console.WriteLine();
       Console.WriteLine("What would you like to do?");
       string input = Console.ReadLine().ToLower() + " ";
       string command = input.Substring(0, input.IndexOf(" "));
-      string option = input.Substring(input.IndexOf(" ") + 1).Trim();
+      var option = input.Substring(input.IndexOf(" ") + 1).Trim();
       //NOTE this will take the user input and parse it into a command and option.
       //IE: take silver key => command = "take" option = "silver key"
       //NOTE this should print your messages for the game.
@@ -53,11 +52,12 @@ namespace ConsoleAdventure.Project.Controllers
           _gameService.Help(input);
           break;
       }
-      // private void Print()
-      {
 
+    }
 
-      }
+    private static void Print()
+    {
+
 
     }
   }

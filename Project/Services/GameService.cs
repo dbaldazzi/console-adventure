@@ -15,7 +15,9 @@ namespace ConsoleAdventure.Project
                         private IGame _game { get; set; }
 
         public List<string> Messages { get; set; }
-        public GameService()
+    public object currentroom { get; internal set; }
+
+    public GameService()
         {
             _game = new Game();
             Messages = new List<string>();
